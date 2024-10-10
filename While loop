@@ -1,0 +1,25 @@
+// program for while loop
+/*
+Name: evans
+Reg: CT101/G/23738/24
+*/
+#include<stdio.h>
+
+int main(){
+ int i,start,sum,stop;
+ 
+ printf("Enter value of when to start:\n");
+ scanf("%d",&start);
+ 
+ printf("Enter value of when to stop:\n");
+ scanf("%d",&stop);
+ i=start;
+ while(i<stop)
+ {
+ printf("%d\n",i);
+ i++;
+ sum=sum+start;
+ }
+ printf("The sum is:%d",sum);
+    return 0;
+}
