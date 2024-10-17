@@ -1,0 +1,66 @@
+//program to calculate electric bill by c function 
+/*
+Athor:evans mutuma 
+Date: 17/1/2024
+*/
+#include <stdio.h>
+float calculate_total_bill(int units) {
+    float charge_per_unit, total_bill;
+    if (units <= 199) {
+        charge_per_unit = 1.20;
+        total_bill = units * charge_per_unit;
+    } else if (units >= 200 && units < 400) {
+        charge_per_unit = 1.50;
+        total_bill = units * charge_per_unit;
+    } else if (units >= 400 && units < 600) {
+        charge_per_unit = 1.80;
+        total_bill = units * charge_per_unit;
+    } else {
+        charge_per_unit = 2.00;
+        total_bill = units * charge_per_unit;
+    }
+    
+    if (total_bill < 100) {
+        total_bill = 100;
+    }
+
+    return total_bill;
+
+}
+float calculate_surcharge (float_total_bill){
+if('total_bill'>400){
+return 'total_bill'*0.15;
+}else{
+return 0;
+}
+}
+float calculate_final_bill( float total_bill , float surcharge){
+return total_bill +surcharge;
+}int main() {
+    
+    int surcharge;
+    char customer_name, customer_id;
+    float total_bill, unit_consumed,final_bill;
+
+    
+    printf("Enter your name: ");
+    scanf("%s", &customer_name);
+
+    printf("Enter your customer ID: ");
+    scanf("%f", &customer_id);
+
+    printf("Enter the units consumed: ");
+    scanf("%f", &unit_consumed);
+
+    
+    total_bill = calculate_total_bill(unit_consumed);
+    surcharge =calculate_surcharge (total_bill); 
+    final_bill =calculate_final_bill(total_bill , surcharge);
+    printf("\nCustomer ID=%d\n", customer_id);
+    printf("Your customer name=%s\n", customer_name);
+    printf("You have consumed=%d units\n", unit_consumed);
+    printf("Total amount to pay=%.2f Ksh\n", total_bill);
+    printf ("Final bill to pay=%.2fKsh\n",final_bill);
+    printf ("Amount of surcharge=%i\n",surcharge );
+      return 0;
+}
