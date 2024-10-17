@@ -1,0 +1,12 @@
+// c arreys -10 arreys
+#include<stdio.h>
+int main(){
+int i;
+
+
+int marks[6]={100,55,46,44,30,22};
+for(i=0;i<6;i++){
+printf( "marks[%d]= %d\n",i,marks[i]);
+}
+return 0;
+}
